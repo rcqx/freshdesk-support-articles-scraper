@@ -1,6 +1,6 @@
-# support-scraper
+# A simple Freshdesk support articles scraper
 
-Small scraper for Appenate KB used during development.
+Small scraper that fetches support articles stored within Freshdesk.
 
 How to run (single-article / test modes):
 
@@ -61,4 +61,3 @@ Run with headful mode (so you can watch the browser):
 # set headless to false in scraper.js or run with an env var if you prefer
 node scraper.js --single /article/creating-forms-with-ai/
 ```
-# freshdesk-support-articles-scraper

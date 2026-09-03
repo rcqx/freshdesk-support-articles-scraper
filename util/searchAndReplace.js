@@ -61,7 +61,7 @@ function run() {
   }
 
   fs.writeFile(
-    "./xformsArticles.json",
+    "./scrapedArticles.json",
     JSON.stringify(updatedArticles),
     (err) => {
       if (err) {

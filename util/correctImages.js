@@ -5,12 +5,6 @@ import images from "./appenateTestImages.js";
 import { GoogleGenAI } from "@google/genai";
 dotenv.config();
 
-// black #333333
-// blue  #30597C
-// red #D72638
-// silver #C0C0C0
-// white #FAFAFA
-
 const modelId = "models/gemini-2.5-flash-image";
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -20,7 +14,7 @@ const ai = new GoogleGenAI({
 async function generateImage(image) {
   console.log(chalk.yellow("Creating image -->"), image.original_url);
   const promptText =
-    "Change all instances of the color orange (specifically hex codes #e89a46 and #e78e45, and any similar shades of orange) to a dark charcoal color (#333333). For any orange bottom borders found under titles, update their color to #D72638. If any 'Appenate' logo is present, remove it completely and replace it with X-Forms by SolidStride.";
+    "Change all instances of the color orange (specifically hex codes #e89a46 and #e78e45, and any similar shades of orange) to a dark charcoal color (#333333). For any orange bottom borders found under titles, update their color to #D72638. If any 'Appenate' logo is present, remove it completely and replace it with 'your custom logo'.";
 
   try {
     console.log("Downloading image...");
