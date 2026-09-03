@@ -37,8 +37,26 @@ node scraper.js --limit 2
 
 Notes:
 - The script uses `DATABASE_URL` from environment and will create tables if they don't exist.
+- `util/correctImages.js` requires `GEMINI_API_KEY` in the environment (see Environment variables / secrets below).
+- It also saves the screaped content in a json file
 - Images are saved to `./downloaded_images` by default.
 - The default delay between requests is 2s; adjust `CONFIG.delayBetweenRequests` in `scraper.js`.
+
+Environment variables / secrets
+---------------------------------
+Add these to your `.env` (never commit it — `.env` is gitignored):
+
+```
+# Postgres connection string used by the scraper
+DATABASE_URL=postgres://user:password@host:5432/dbname
+
+# Google Gemini API key, used by util/correctImages.js for image editing
+GEMINI_API_KEY=your-gemini-api-key
+```
+
+Get a Gemini API key from Google AI Studio (https://aistudio.google.com/apikey). The
+image correction script uses the `models/gemini-2.5-flash-image` model, so the key must
+belong to a project with access to that model.
 
 Login (headful testing)
 ---------------------------------
